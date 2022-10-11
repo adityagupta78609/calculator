@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <style>
+        .b{margin-top:5px;
+            width:50px;
+        }
+        #expression{
+            width:270px;
+            height:25px;
+        }
+    </style>
+    <script>
+        var inputstring="";
+        function updatestring(value){
+            inputstring += value;
+            document.Calculator.Input.value = inputstring;
+        }
+        
+    </script>
+  </head>
+
+  <body>
+   <center> <form action="" name="Calculator">
+      <input type="text" name="Input" id="expression" />
+
+      <div class="oper">
+        <input type="button" class="b" value="+" onclick="updatestring('+')">
+        <input type="button" class="b" value="-" onclick="updatestring('-')">
+        <input type="button" class="b" value="*" onclick="updatestring('*')">
+        <input type="button" class="b" value="/" onclick="updatestring('/')">
+        <input type="button" class="b" value="mod" onclick="updatestring('%')">
+      
+    </div>
+
+    <div class="num1">
+        <input type="button" class="b" value="7" onclick="updatestring('7')">
+        <input type="button" value="8" class="b" onclick="updatestring('8')">
+        <input type="button" value="9"class="b" onclick="updatestring('9')">
+        
+        <div class="num">
+        <input type="button" value="4"class="b" onclick="updatestring('4')">
+        <input type="button" value="5"class="b" onclick="updatestring('5')">
+        <input type="button" value="6"class="b" onclick="updatestring('6')">
+        
+    </div>
+    
+    <div class="num3">
+        <input type="button" value="1"class="b" onclick="updatestring('1')">
+        <input type="button" value="2"class="b" onclick="updatestring('2')">
+        <input type="button" value="3"class="b" onclick="updatestring('3')">
+    </div>
+    <input type="button" value="0"class="b" onclick="updatestring('0')">
+</div>
+<input type="button" value="."class="b" onclick="updatestring('.')">
+    <input type="button" value="clear" class="b" onclick="document.Calculator.Input.value='';
+    inputstring='';">
+    <input type="button" value="=" class="b" onclick="document.Calculator.Input.value = eval(inputstring);
+    inputstring='' ">
+    </form>
+</center>
+  </body>
+  
+</html>
